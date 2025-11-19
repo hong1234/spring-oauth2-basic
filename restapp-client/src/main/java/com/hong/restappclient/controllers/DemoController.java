@@ -19,7 +19,7 @@ public class DemoController {
   public String token() {
     OAuth2AuthorizeRequest request = OAuth2AuthorizeRequest
         .withClientRegistrationId("1")
-        .principal("client2")
+        .principal("client")
         .build();
 
     var client = clientManager.authorize(request);

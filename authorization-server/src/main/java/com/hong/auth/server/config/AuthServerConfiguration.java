@@ -66,18 +66,38 @@ public class AuthServerConfiguration {
                 // .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+                // .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 // .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                .redirectUri("http://localhost:8080/login/oauth2/code/my_authorization_server")
+                // .redirectUri("http://localhost:8080/login/oauth2/code/ui_client")
                 .scope(OidcScopes.OPENID)
                 // .scope("createBlogPost")
                 // .scope("updateBlogPost")
                 // .scope("deleteBlogPost")
-                // .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                .build();
+            
+            RegisteredClient registeredClient2 = RegisteredClient
+                .withId(UUID.randomUUID().toString())
+                .clientId("client2")
+                .clientSecret(passwordEncoder.encode("secret2"))
+                // .clientSecret("secret")
+                // .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
+                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
+                .redirectUri("http://localhost:8080/login/oauth2/code/ui_client")
+                .scope(OidcScopes.OPENID)
+                // .scope("createBlogPost")
+                // .scope("updateBlogPost")
+                // .scope("deleteBlogPost")
                 .build();
 
         // Save registered client in-memory
-        return new InMemoryRegisteredClientRepository(registeredClient);
+        // return new InMemoryRegisteredClientRepository(registeredClient);
+        
+        return new InMemoryRegisteredClientRepository(
+            registeredClient,
+            registeredClient2
+        );
     }
 
     @Bean

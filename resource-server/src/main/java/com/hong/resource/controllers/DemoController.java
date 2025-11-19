@@ -14,6 +14,6 @@ public class DemoController {
 
     @GetMapping("/teams")
     public List<String> getTeams() {
-        return List.of("Argentina", "Australia", "Brazil", "Canada", "China PR", "Colombia", "Costa Rica", "Denmark", "England", "France", "Germany", "Italy", "Jamaica", "Japan", "Korea Republic", "Morocco", "Netherlands", "New Zealand", "Nigeria", "Norway", "Panama", "Philippines", "Portugal", "Republic of Ireland", "South Africa", "Spain", "Sweden", "Switzerland", "USA", "Vietnam", "Zambia");
+        return List.of("Portugal", "Republic of Ireland", "South Africa", "Spain", "Sweden", "Switzerland", "USA", "Vietnam", "Zambia");
     }
 }

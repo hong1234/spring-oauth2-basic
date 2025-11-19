@@ -33,7 +33,7 @@ public class HomeController {
     }
 
     @GetMapping("/teams")
-    public String teams(@RegisteredOAuth2AuthorizedClient("my_authorization_server") OAuth2AuthorizedClient authorizedClient, Model model) {
+    public String teams(@RegisteredOAuth2AuthorizedClient("ui_client") OAuth2AuthorizedClient authorizedClient, Model model) {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.AUTHORIZATION, "Bearer " + authorizedClient.getAccessToken().getTokenValue());
