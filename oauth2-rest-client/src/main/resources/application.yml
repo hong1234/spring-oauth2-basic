@@ -5,8 +5,9 @@
 demo:
   teams:
     api: http://localhost:9090/teams
+
 spring:
-## Chapter 17 Authorization Server
+## Authorization Server
   security:
     oauth2:
       client:
@@ -16,7 +17,7 @@ spring:
             client-secret: secret
             # scope: events.read 
             authorization-grant-type: client_credentials
-            client-name: Calendar Client
+            client-name: Demo Client
         provider:
           demo-client:
             token-uri: http://localhost:7070/oauth2/token
