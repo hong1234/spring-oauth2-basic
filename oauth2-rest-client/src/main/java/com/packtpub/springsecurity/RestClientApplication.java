@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CalendarClientApplication {
+public class RestClientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalendarClientApplication.class, args);
+		SpringApplication.run(RestClientApplication.class, args);
 	}
 
 }

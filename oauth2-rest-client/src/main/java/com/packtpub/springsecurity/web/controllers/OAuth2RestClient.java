@@ -15,11 +15,11 @@ public class OAuth2RestClient {
 	}
 	
     @Value("${demo.teams.api}")
-    private String eventsApi;
+    private String teamsApi;
 	
 	@GetMapping("/")
     public  String apiCheck() {
-		return oauth2RestTemplate.getForObject(eventsApi, String.class);
+		return oauth2RestTemplate.getForObject(teamsApi, String.class);
     }
 
 } 
