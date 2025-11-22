@@ -18,7 +18,7 @@ import org.springframework.security.oauth2.core.oidc.OidcScopes;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class ProjectConfig {
+public class SecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -55,7 +55,8 @@ public class ProjectConfig {
 
   @Bean
   public ClientRegistrationRepository clientRegistrationRepository() {
-    ClientRegistration c1 = ClientRegistration.withRegistrationId("1")
+    ClientRegistration c1 = ClientRegistration
+        .withRegistrationId("client#1")
         .clientId("client")
         .clientSecret("secret")
         .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)

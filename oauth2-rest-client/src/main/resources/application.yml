@@ -2,24 +2,28 @@
 # Application YAML #
 # inside ./src/main/resources/application.yml
 #------------------------------------------------------------------------------# 
+
+server:
+  port: 8888
+
 demo:
   teams:
     api: http://localhost:9090/teams
 
-spring:
-## Authorization Server
-  security:
-    oauth2:
-      client:
-        registration:
-          demo-client:
-            client-id: client
-            client-secret: secret
-            # scope: events.read 
-            authorization-grant-type: client_credentials
-            client-name: Demo Client
-        provider:
-          demo-client:
-            token-uri: http://localhost:7070/oauth2/token
-server:
-  port: 8888
+## Authorization Server 
+# spring:
+#   security:
+#     oauth2:
+#       client:
+#         registration:
+#           demo-client:
+#             client-id: client
+#             client-secret: secret
+#             scope: events.read 
+#             scope: openid
+#             authorization-grant-type: client_credentials
+#             client-name: Demo Client
+#         provider:
+#           demo-client:
+#             token-uri: http://localhost:7070/oauth2/token
+

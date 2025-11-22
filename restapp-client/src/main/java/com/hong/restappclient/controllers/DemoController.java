@@ -18,7 +18,7 @@ public class DemoController {
   @GetMapping("/token")
   public String token() {
     OAuth2AuthorizeRequest request = OAuth2AuthorizeRequest
-        .withClientRegistrationId("1")
+        .withClientRegistrationId("client#1")
         .principal("client")
         .build();
 
